@@ -1,0 +1,20 @@
+<div id="<%= friend.id %>">
+  <div class="friend_card card" style="width: 18rem; margin-top:20px">
+    <div class="card-body">
+      <h5 class="card-title"> <%= friend.first_name %> <%= friend.last_name %> </h5>
+      <p><%= friend.email %></p>
+      <p><%= friend.phone %></p>
+    </div>
+    <%= friend.id %>
+    <%= friend.first_name %>
+    <%# so remember when we are using @frind and when we are using only `friend` %>
+    <%# its cause if the view receives friend we use that  %>
+    <%# this means its used basically as partial %>
+    <%# but if the contriller have the `@` defined we need to use that %>
+    <%#   %>
+    <p class="butn_frnd">
+      <%= link_to "Show this friend", friend, class: "btn_frd btn btn-outline-success" %>
+      <%= button_to "Delete this bro", friend, method: :delete, data: { confirm: "Are you sure you want to delete this friend?" }, class: "btn_frd btn btn-outline-danger", form: { id: "delete_friend_#{friend.id}_form" } %>
+    </p>
+  </div>
+</div>
